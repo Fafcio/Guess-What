@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scripts/core.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    Hello World!
+    <input type="text" id="userName" placeholder="Type your username..." />
+    <button id="login-button">
+        Login
+    </button>
+    <br />
+    <a href="/games/guess.html">
+        Go to Guess
+    </a>
+    <script>
+        const userNameInput = document.querySelector('#userName')
+
+        // Handle login
+        document.querySelector('#login-button').addEventListener('click', () => {
+            const userName = userNameInput.value?.trim()
+
+            if(!!!userName) // return early if username is empty
+                return
+
+            User.login(userName)
+        })
+        
+    </script>
+</body>
+</html>

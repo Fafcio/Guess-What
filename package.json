@@ -1,0 +1,26 @@
+{
+  "name": "guess-what",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fafcio/Guess_What.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fafcio/Guess_What/issues"
+  },
+  "homepage": "https://github.com/Fafcio/Guess_What#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "lodash-es": "^4.17.21",
+    "socket.io": "^4.0.1"
+  }
+}
