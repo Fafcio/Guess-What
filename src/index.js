@@ -47,12 +47,28 @@ socketServer.on('connect', socket => {
     const user = usersManager.getBySocketId(socket.id)
     console.log(`${user.name} joined`);
 
-    socket.on('lobby create', () => {
+    // Current user creates lobby
+    socket.on('lobby create', (args, callback) => {
+        // New lobby
+        const lobby = lobbiesManager.create(
+            args.type,
+            user
+        )
 
+        // Send info about lobby
+        callback({
+            lobbyId: lobby.id
+        })
     })
 
-    socket.on('lobby join', () => {
+    // Current user joins existing lobby
+    socket.on('lobby join', (args) => {
+        // Lobby to join
+        const lobby = lobbiesManager.get(
+            args.lobbyId
+        )
 
+        lobby.addUser(user)
     })
 
     socket.on('disconnect', () => {
