@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet"
+          href="home.html.css">
+    <script src="scripts/core.js"></script>
+    <script src="home.html.js"
+            defer></script>
+    <title>Nazwa</title>
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=egde,chrome=1" />
+    <style>
+        #container {
+            width: 1360px;
+            height: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #logo {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        #bord {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 1366px;
+            height: 360px;
+            border: 2px solid black;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #bord-user,
+        #bord-settings {
+            flex-grow: 0;
+            width: 50%;
+            padding: 24px;
+            box-sizing: border-box;
+        }
+
+        #bord-settings {
+            border-left: 2px solid black;
+        }
+
+        #bord-settings>* {
+            float: left;
+            clear: both;
+        }
+
+        #bord-settings>input[type=radio] {
+            display: none;
+        }
+
+        #bord-settings>input[type=radio]+label {
+            cursor: pointer;
+            line-height: 1.6em;
+        }
+
+        #bord-settings>input[type=radio]:checked+label {
+            font-weight: bold;
+        }
+
+        #lobbyType,
+        #lobbyId {
+            display: none;
+        }
+
+        #user-host:checked~#lobbyType,
+        #user-guest:checked~#lobbyId {
+            display: initial;
+        }
+
+        input[type=text] {
+            height: 1.8em;
+            font-family: inherit;
+            padding: 4px 12px;
+            background-color: #000000a1;
+            border: 1px solid #00000063;
+            border-radius: 5px;
+            margin: 6px 0;
+            color: white;
+        }
+
+        input[type=text]:focus {
+            outline: none;
+            border-color: blue;
+        }
+
+        #main {
+            width: 900px;
+            height: 300px;
+            border-style: dashed;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Game logo -->
+        <div id="logo">
+            <img src="assets/logo.png"
+                 style="width:250px; height:250px">
+        </div>
+        <!-- User -->
+        <div id="bord">
+            <!-- User login -->
+            <div id="bord-user">
+                <img src="assets/ava.png"
+                     style="width:200px; height:200px;">
+                <form action="1">
+                    <input type="text"
+                           id="userName"
+                           placeholder="Wpisz nazwę użytkownika..."
+                           style="width: 200px">
+                </form>
+                <button style="text-decoration:none"
+                        id="start-game"
+                        class="btn btn1">Zacznij grę</button>
+            </div>
+            <!-- User login settings -->
+            <div id="bord-settings">
+                <input type="radio"
+                       name="userType"
+                       value="host"
+                       id="user-host">
+                <label for="user-host">
+                    Stwórz lobby
+                </label>
+
+                <input type="radio"
+                       name="userType"
+                       value="guest"
+                       id="user-guest"
+                       checked>
+                <label for="user-guest">
+                    Dołącz do lobby
+                </label>
+
+                <!-- Lobby type -->
+                <select id="lobbyType">
+                    <option value="guess">Głuchy telefon</option>
+                    <option value="tic-tac-toe">Kółko i krzyżyk</option>
+                    <option value="coin">Rzut monetą</option>
+                </select>
+                <!-- Lobby id -->
+                <input type="text"
+                       id="lobbyId"
+                       placeholder="ID lobby" />
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
