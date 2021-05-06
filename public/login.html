@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scripts/core.js"></script>
+    <script src="login.html.js" defer></script>
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1,h2 {
+            margin: 0;
+            padding: 0;
+        }
+
+        .start {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            margin: 12px 24px;
+        }
+
+        .card > *:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Kórnik 2.0
+    </h1>
+    <div class="start">
+        <div class="card">
+            <h2>
+                Stwórz lobby
+            </h2>
+            <input type="text" id="userNameHost" placeholder="Twoje imię" />
+            <select id="lobbyType">
+                <option value="guess">Głuchy telefon</option>
+                <option value="tic-tac-toe">Kółko i krzyżyk</option>
+                <option value="coin">Rzut monetą</option>
+            </select>
+            <button id="create-button">
+                Stwórz
+            </button>
+        </div>
+        <div class="card">
+            <h2>
+                Dołącz do lobby
+            </h2>
+            <input type="text" id="userNameGuest" placeholder="Twoje imię" />
+            <input type="text" id="lobbyId" placeholder="ID lobby" />
+            <button id="join-button">
+                Dołącz
+            </button>
+        </div>
+    </div>
+</body>
+</html>
