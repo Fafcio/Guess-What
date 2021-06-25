@@ -47,10 +47,6 @@ User.login = (userName) => {
         }
     })
 
-    // Check if connection exist
-    if (socket.disconnected)
-        return false
-
     // Create user
     User.me = new User(userName, socket)
 
@@ -63,7 +59,9 @@ User.login = (userName) => {
  * @enum {string}
  */
 var LobbyType = {
-    GUESS: 'guess',
+    FLIP_A_COIN: 'flip-a-coin',
+    NUMBER_GAME: 'number-game',
+    SNAKE: 'snake'
 }
 
 /**
@@ -71,7 +69,7 @@ var LobbyType = {
  * @constructor
  */
 var Lobby = function () {
-
+    this.type = LobbyType.FLIP_A_COIN
 }
 
 /**
@@ -98,7 +96,7 @@ Lobby.create = (lobbyType) => {
     User.me.socket.emit('lobby create', { // Lobby params
         type: lobbyType
     }, response => { // Response
-
+        Lobby.current = response
     })
 
     return true
@@ -109,5 +107,5 @@ Lobby.create = (lobbyType) => {
  * @param {string} lobbyId id of a lobby to join
  */
 Lobby.join = (lobbyId) => {
-
+    console.log('join');
 }

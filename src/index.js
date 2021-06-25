@@ -55,9 +55,12 @@ socketServer.on('connect', socket => {
             user
         )
 
+        console.log(`Lobby ${args.type} (${lobby.id}) created`);
+
         // Send info about lobby
         callback({
-            lobbyId: lobby.id
+            lobbyId: lobby.id,
+            type: lobby.type
         })
     })
 

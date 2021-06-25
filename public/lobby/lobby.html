@@ -9,6 +9,8 @@
     <meta http-equiv="X-UA-Compatible"
           content="IE=egde,chrome=1" />
     <script src="../scripts/core.js"></script>
+    <script src="./lobby.html.js"
+            defer></script>
     <style>
         #container {
             position: relative;
@@ -39,6 +41,13 @@
             width: 900px;
             height: 300px;
         }
+
+        #game-frame {
+            width: 100%;
+            height: 80vh;
+            max-height: 480px;
+            border: unset;
+        }
     </style>
 
 </head>
@@ -57,10 +66,11 @@
         </header>
         <main class="chat-main">
             <div class="chat-sidebar">
-                <h3><i class="fas fa-comments"></i> GAME:</h3>
+                <h3><i class="fa fa-comments"></i> GAME:</h3>
                 <h2 id="room-name">Jakaś gra</h2>
-                <h3><i class="fas fa-users"></i> Users</h3>
-                <ul id="users">
+                <h3 style="display: none;"><i class="fa fa-users"></i> Users</h3>
+                <ul id="users"
+                    style="display: none;">
                     <li>u1</li>
                     <li>u2</li>
                     <li>u3</li>
@@ -68,7 +78,10 @@
                 </ul>
             </div>
             <div class="chat-messages">
+                <iframe id="game-frame">
 
+                </iframe>
+            </div>
 </body>
 
 </html>
